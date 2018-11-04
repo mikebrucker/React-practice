@@ -11,12 +11,29 @@ class App extends Component {
 		]
 	}
 
+	addPlayer = player => {
+		player.id = Math.random();
+		let roster = [...this.state.roster, player];
+		this.setState({
+			roster: roster
+		});
+	}
+
+	deletePlayer = id => {
+		let roster = this.state.roster.filter(player => {
+			return player.id !== id;
+		});
+		this.setState({
+			roster: roster
+		});
+	}
+
 	render() {
 		return (
 		<div>
 			<h1>Bandits</h1>
-			<Roster roster={this.state.roster}/>
-			<AddPlayer />
+			<Roster deletePlayer={this.deletePlayer} roster={this.state.roster} />
+			<AddPlayer addPlayer={this.addPlayer} />
 		</div>
     	);
   	}
