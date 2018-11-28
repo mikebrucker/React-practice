@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './AddPlayer.css'
 
 class AddPlayer extends Component {
     state = {
@@ -19,7 +20,7 @@ class AddPlayer extends Component {
 
     render() {
         return (
-            <div>
+            <div className='add-player'>
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor='name'>Name:</label>
                     <input type='text' id='name' onChange={this.handleChange} />

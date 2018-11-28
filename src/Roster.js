@@ -1,4 +1,5 @@
 import React from 'react';
+import './Roster.css'
 
 const Roster = ({roster, deletePlayer}) => {
     const rosterList = roster.map(player => {
